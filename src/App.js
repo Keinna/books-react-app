@@ -5,6 +5,25 @@ import BookList from './components/BookList';
 function App(){
     const [books, setBooks] = useState([]);
 
+    const deleteBookById = (id) => {
+        const updatedBooks = books.filter((book) => {
+            return book.id !== id;
+        });
+
+        setBooks(updatedBooks);
+    };
+
+    const editBookByID = (id, newTitle) => {
+        const updatedBooks = books.map((book) => {
+            if(book.id === id){
+                return { ...book, title: newTitle};
+            }
+            return book;
+        });
+
+        setBooks(updatedBooks);
+    }
+
     const createBook = (title) => {
         const updatedBooks = [
             //go and find the existing books piece of state and copy them into new array
@@ -17,7 +36,7 @@ function App(){
 
 return( 
     <div className="app">
-        <BookList books={books}/>
+        <BookList books={books} onDelete={deleteBookById} onEdit={editBookByID}/>
         <BookCreate onCreate={createBook} />
     </div>
     )
