@@ -23,6 +23,7 @@ const [showEdit, setShowEdit] = useState(false);
 
     return ( 
         <div className="book-show">
+            <img src={`https://picsum.photos/seed/${book.id}/300/200`} alt="books"/>
             <div>{content}</div>
             <div className="actions">
                 <div className="edit" onClick={handleEditClick}>Edit</div>
