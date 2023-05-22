@@ -25,3 +25,5 @@ Each book in the list will have an edit icon and a delete icon. Clicking the edi
 
 To delete a book from the list, click the delete icon next to the book you wish to remove. 
 
+## Dev info
+To start the project, you need to start two terminals. Use "npm run start" and "npm run server"

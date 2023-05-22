@@ -36,9 +36,12 @@ function App(){
 
 return( 
     <div className="app">
-        <h1>Book List</h1>
+      <div className="container-title">
+      <h1>Book Management App</h1>
+      </div>
         <BookList books={books} onDelete={deleteBookById} onEdit={editBookByID}/>
         <BookCreate onCreate={createBook} />
+      
     </div>
     )
 }
